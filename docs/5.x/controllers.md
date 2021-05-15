@@ -38,7 +38,7 @@ $router->get('/another-route', function (ServerRequestInterface $request): Respo
 
 As mentioned above, Route will dispatch any `callable` when a route is matched.
 
-For performance reasons, Route also allows you to define controllers as a type of proxy, there are two of these proxies that will allow you to define strings and the actually callable will be built when Route dispatches it.
+For performance reasons, Route also allows you to define controllers as a type of proxy, there are two of these proxies that will allow you to define strings and the actual callable will be built when Route dispatches it.
 
 ### Closure
 
