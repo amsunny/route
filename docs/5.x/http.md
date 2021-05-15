@@ -16,7 +16,7 @@ Throughout this documentation, we will be using [zend-diactoros](https://zendfra
 
 ## The Request
 
-Route dispatches a `Psr\Http\Message\ServerRequestInterface` implementations, passes it through your middleware and finally to your controller as the first argument of the controller callable.
+Route dispatches a `Psr\Http\Message\ServerRequestInterface` implementation, passes it through your middleware and finally to your controller as the first argument of the controller callable.
 
 ### Middleware Signature
 
@@ -71,7 +71,7 @@ Route does not provide any functionality for dealing with globals such as `$_GET
 
 ## The Response
 
-Because Route is built around PSR-15, this means that middleware and controllers are handles in a [single pass](https://www.php-fig.org/psr/psr-15/meta/#52-single-pass-lambda) approach. What this means in practice is that all middleware is passed a request object but is expected to build and return its own response or pass off to the next middleware in the stack for that to create one. Any controller that is dispatched via Route is wrapped in a middleware that adheres to this.
+Because Route is built around PSR-15, this means that middleware and controllers are handled in a [single pass](https://www.php-fig.org/psr/psr-15/meta/#52-single-pass-lambda) approach. What this means in practice is that all middlewares are passed a request object but are expected to build and return their own response or pass off to the next middleware in the stack for that to create one. Any controller that is dispatched via Route is wrapped in a middleware that adheres to this.
 
 Once wrapped, your controller ultimately becomes the last middleware in the stack (this does not mean that it has to be invoked last, see [middleware](/5.x/middleware) for more on this), it just means that it will only be concerned with creating and returning a response object.
 
